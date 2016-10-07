@@ -19,3 +19,41 @@ extension NSManagedObject: Insertable {
         return try object(fromJSONDictionary: dictionary, inContext: context)
     }
 }
+
+extension NSManagedObject: ManyInsertable {
+    public static func insertMany(from json: Any, in context: NSManagedObjectContext) throws -> [Any] {
+        guard let array = json as? JSONArray else {
+            throw InsertError.invalidJSON(json)
+        }
+        
+        let entityName = context.entityDescriptionForClass(self).name!
+        
+        return try objects(withEntityName: entityName,
+                           fromJSONArray: array,
+                           inContext: context)
+    }
+}
+
+private extension NSManagedObjectContext {
+    
+    /// Return the `NSEntityDescription` for the given type in the receiver `NSManagedObjectContext`.
+    /// If the entity can't be found, it will throw a fatalError
+    ///
+    /// - parameter aClass: The class to match with an entity
+    ///
+    /// - returns: The `NSEntityDescription`
+    func entityDescriptionForClass(_ aClass: NSManagedObject.Type) -> NSEntityDescription {
+        
+        let entityName = NSStringFromClass(aClass)
+        let model = persistentStoreCoordinator!.managedObjectModel
+        
+        for entityDescription in model.entities {
+            
+            if entityDescription.managedObjectClassName == entityName {
+                return entityDescription
+            }
+        }
+        
+        fatalError("Can't found a match for the class \(aClass) in the context \(self)")
+    }
+}
