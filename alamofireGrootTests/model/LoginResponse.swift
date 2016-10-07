@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import AlamofireGroot
+@testable import AlamofireCoreData
 
 struct LoginResponse: Wrapper {
     

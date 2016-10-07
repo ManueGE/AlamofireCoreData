@@ -4,13 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AlamofireGroot.xcscheme</key>
+		<key>AlamofireCoreData.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>AlamofireGrootTests.xcscheme</key>
+		<key>AlamofireCoreDataTests.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
 			<integer>7</integer>
 		</dict>

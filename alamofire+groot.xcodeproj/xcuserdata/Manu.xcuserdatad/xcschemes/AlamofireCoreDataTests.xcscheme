@@ -16,9 +16,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "323DF6D31DA7CAB400953180"
-               BuildableName = "AlamofireGrootTests.xctest"
-               BlueprintName = "AlamofireGrootTests"
+               BlueprintIdentifier = "32F981851DA7A7C400A6257F"
+               BuildableName = "AlamofireCoreDataTests.xctest"
+               BlueprintName = "AlamofireCoreDataTests"
                ReferencedContainer = "container:alamofire+groot.xcodeproj">
             </BuildableReference>
          </TestableReference>

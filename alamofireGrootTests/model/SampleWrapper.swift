@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-@testable import AlamofireGroot
+@testable import AlamofireCoreData
 
 // Just a sample to test mapper with Insertable as option, normal and force unwrapped
 struct SampleWrapper: Wrapper {

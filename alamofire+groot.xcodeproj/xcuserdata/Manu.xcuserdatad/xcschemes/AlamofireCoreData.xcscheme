@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "323DF6B61DA7C8AC00953180"
-               BuildableName = "AlamofireGroot.framework"
-               BlueprintName = "AlamofireGroot"
+               BuildableName = "AlamofireCoreData.framework"
+               BlueprintName = "AlamofireCoreData"
                ReferencedContainer = "container:alamofire+groot.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "32F981851DA7A7C400A6257F"
-               BuildableName = "AlamofireGrootTests.xctest"
-               BlueprintName = "AlamofireGrootTests"
+               BuildableName = "AlamofireCoreDataTests.xctest"
+               BlueprintName = "AlamofireCoreDataTests"
                ReferencedContainer = "container:alamofire+groot.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -44,8 +44,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "323DF6B61DA7C8AC00953180"
-            BuildableName = "AlamofireGroot.framework"
-            BlueprintName = "AlamofireGroot"
+            BuildableName = "AlamofireCoreData.framework"
+            BlueprintName = "AlamofireCoreData"
             ReferencedContainer = "container:alamofire+groot.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -66,8 +66,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "323DF6B61DA7C8AC00953180"
-            BuildableName = "AlamofireGroot.framework"
-            BlueprintName = "AlamofireGroot"
+            BuildableName = "AlamofireCoreData.framework"
+            BlueprintName = "AlamofireCoreData"
             ReferencedContainer = "container:alamofire+groot.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -84,8 +84,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "323DF6B61DA7C8AC00953180"
-            BuildableName = "AlamofireGroot.framework"
-            BlueprintName = "AlamofireGroot"
+            BuildableName = "AlamofireCoreData.framework"
+            BlueprintName = "AlamofireCoreData"
             ReferencedContainer = "container:alamofire+groot.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
