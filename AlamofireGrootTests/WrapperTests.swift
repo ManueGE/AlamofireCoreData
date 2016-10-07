@@ -13,7 +13,6 @@ import Alamofire
 
 class WrapperTests: InsertableTests {
     
-    // MARK: Without serializer
     func testSerializeSingleWrapper() {
         
         // given
@@ -72,25 +71,34 @@ class WrapperTests: InsertableTests {
             XCTAssertEqual(friends?.first?.managedObjectContext, self.persistentContainer.viewContext, "property does not match")
         }
     }
-    
-    /*
-    // MARK: Serializer with transformer
-    func testSerializingSingleManagedObjectWithTransformers() {
+
+    // MARK: Many
+    func testSerializeManyWrapper() {
+        
         // given
-        let responseArrived = self.expectation(description: "response of async request arrived")
-        var receivedObject: User?
-        let expectedJSON: [String: Any] = [
-            "status": 1,
-            "data": [
-                "id": 10,
-                "name": "manueGE"
+        let responseArrived = self.expectation(description: "response of async request has arrived")
+        var receivedObject: Many<LoginResponse>?
+        let expectedJSON: [Any] = [
+            [
+                "token": "my token",
+                "refresh_token": "my refresh token",
+                "message": "ok",
+                "validity": "18/11/1983",
+                "page": 5,
+                
+                "user": ["id": 10, "name": "manueGE"],
+                
+                "friends": [
+                    ["id": 11, "name": "mila"],
+                    ["id": 12, "name": "anaE"],
+                ]
             ]
         ]
         
         // when
         stubSuccess(with: expectedJSON)
         Alamofire.request(apiURL)
-            .responseInsert(jsonSerializer: jsonTransformer, context: persistentContainer.viewContext, type: User.self) { response in
+            .responseInsert(context: persistentContainer.viewContext, type: Many<LoginResponse>.self) { response in
                 switch response.result {
                 case let .success(user):
                     receivedObject = user
@@ -103,108 +111,94 @@ class WrapperTests: InsertableTests {
         // then
         self.waitForExpectations(timeout: 2) { err in
             XCTAssertNotNil(receivedObject, "Received data should not be nil")
-            XCTAssertEqual(receivedObject?.id, 10, "property does not match")
-            XCTAssertEqual(receivedObject?.name, "manueGE", "property does not match")
-            XCTAssertEqual(receivedObject?.managedObjectContext, self.persistentContainer.viewContext, "property does not match")
-        }
-    }
-    
-    func testFailSerializingSingleManagedObjectWithTransformers() {
-        
-        // given
-        let responseArrived = self.expectation(description: "response of async request arrived")
-        var error: Error?
-        let expectedJSON: [String: Any] = [
-            "status": 0,
-            "error": "error message"
-        ]
-        
-        // when
-        stubSuccess(with: expectedJSON)
-        Alamofire.request(apiURL)
-            .responseInsert(jsonSerializer: jsonTransformer, context: persistentContainer.viewContext, type: User.self) { response in
-                switch response.result {
-                case .success:
-                    XCTFail("The operation shouldn fail")
-                case let .failure(e):
-                    error = e
-                }
-                responseArrived.fulfill()
-        }
-        
-        // then
-        self.waitForExpectations(timeout: 2) { err in
-            XCTAssertNotNil(error, "error should not be nil")
-        }
-    }
-    
-    // MARK: Many serializer
-    func testSerializeManyObjects() {
-        // given
-        let responseArrived = self.expectation(description: "response of async request arrived")
-        var receivedObject: Many<User>?
-        let expectedJSON: [[String: Any]] = [
-            [
-                "id": 10,
-                "name": "manueGE"
-            ],
-            [
-                "id": 14,
-                "name": "anaEC"
-            ]
-        ]
-        
-        // when
-        stubSuccess(with: expectedJSON)
-        Alamofire.request(apiURL)
-            .responseInsert(context: persistentContainer.viewContext, type: Many<User>.self) { response in
-                switch response.result {
-                case let .success(user):
-                    receivedObject = user
-                case .failure:
-                    XCTFail("The operation shouldn't fail")
-                }
-                responseArrived.fulfill()
-        }
-        
-        // then
-        self.waitForExpectations(timeout: 2) { err in
-            XCTAssertNotNil(receivedObject, "Received data should not be nil")
-            XCTAssertEqual(receivedObject?.count, 2, "property does not match")
-            let user = receivedObject?.first!
-            XCTAssertEqual(user?.id, 10, "property does not match")
+            
+            XCTAssertEqual(receivedObject?.count, 1, "count does not match")
+            
+            let response = receivedObject?[0]
+            
+            XCTAssertEqual(response?.token, "my token", "property does not match")
+            XCTAssertEqual(response?.refreshToken, "my refresh token", "property does not match")
+            XCTAssertEqual(response?.message, "ok", "property does not match")
+            XCTAssertEqual(response?.page, 5, "property does not match")
+            
+            let date = DateComponents(calendar: .current,
+                                      year: 1983,
+                                      month: 11,
+                                      day: 18).date
+            
+            XCTAssertEqual(response?.validity, date, "Received data should not be nil")
+            
+            let user = response?.user
+            XCTAssertEqual(user?.id, 10, "Received data should not be nil")
             XCTAssertEqual(user?.name, "manueGE", "property does not match")
             XCTAssertEqual(user?.managedObjectContext, self.persistentContainer.viewContext, "property does not match")
+            
+            let friends = response?.friends
+            XCTAssertEqual(friends?.count, 2, "Received data should not be nil")
+            XCTAssertEqual(friends?.first?.id, 11, "Received data should not be nil")
+            XCTAssertEqual(friends?.first?.name, "mila", "Received data should not be nil")
+            XCTAssertEqual(friends?.first?.managedObjectContext, self.persistentContainer.viewContext, "property does not match")
         }
     }
-    
-    func testFailSerializeManyObjects() {
+
+    // MARK: Nil and without key
+    func testSerializeWrapperWithNilValue() {
         
         // given
-        let responseArrived = self.expectation(description: "response of async request arrived")
-        var error: Error?
+        let responseArrived = self.expectation(description: "response of async request has arrived")
+        var receivedObject: LoginResponse?
         let expectedJSON: [String: Any] = [
-            "id": 10,
-            "name": "manueGE"
+            "refresh_token": NSNull(),
         ]
         
         // when
         stubSuccess(with: expectedJSON)
         Alamofire.request(apiURL)
-            .responseInsert(context: persistentContainer.viewContext, type: Many<User>.self) { response in
+            .responseInsert(context: persistentContainer.viewContext, type: LoginResponse.self) { response in
                 switch response.result {
-                case .success:
-                    XCTFail("The operation shouldn fail")
-                case let .failure(e):
-                    error = e
+                case let .success(user):
+                    receivedObject = user
+                case .failure:
+                    XCTFail("The operation shouldn't fail")
                 }
                 responseArrived.fulfill()
         }
         
         // then
         self.waitForExpectations(timeout: 2) { err in
-            XCTAssertNotNil(error, "error should not be nil")
+            XCTAssertNotNil(receivedObject, "Received data should not be nil")
+            XCTAssertNil(receivedObject?.refreshToken, "property should be nil")
         }
     }
- */
+    
+    func testSerializeWrapperWithMissingKeyNotOverrides() {
+        
+        // given
+        let responseArrived = self.expectation(description: "response of async request has arrived")
+        var receivedObject: LoginResponse?
+        let expectedJSON: [String: Any] = [
+            "token": "my token",
+            ]
+        
+        // when
+        stubSuccess(with: expectedJSON)
+        Alamofire.request(apiURL)
+            .responseInsert(context: persistentContainer.viewContext, type: LoginResponse.self) { response in
+                switch response.result {
+                case let .success(user):
+                    receivedObject = user
+                case .failure:
+                    XCTFail("The operation shouldn't fail")
+                }
+                responseArrived.fulfill()
+        }
+        
+        // then
+        self.waitForExpectations(timeout: 2) { err in
+            XCTAssertNotNil(receivedObject, "Received data should not be nil")
+            XCTAssertEqual(receivedObject?.token, "my token", "property should be nil")
+            XCTAssertEqual(receivedObject?.message, "success", "property should be nil") //success is the default value
+        }
+    }
+
 }

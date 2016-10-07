@@ -13,6 +13,7 @@ struct LoginResponse: Wrapper {
     
     var token: String!
     var refreshToken: String?
+    var message: String = "success"
     var validity: Date?
     var page: Int = 0
     var user: User!
@@ -23,6 +24,7 @@ struct LoginResponse: Wrapper {
     mutating func map(_ map: Map) {
         token <- map["token"]
         refreshToken <- map["refresh_token"]
+        message <- map["message"]
         validity <- (map["validity"], dateTransformer)
         page <- map["page"]
         

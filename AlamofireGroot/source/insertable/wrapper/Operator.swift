@@ -10,7 +10,7 @@ import Foundation
 
 infix operator <-
 
-// MARK: Element Operator
+// MARK: Insertable Operator
 public func <- <T: Insertable>(left: inout T, right: MapValue?) {
     if let mapValue = right {
         let value: T? = mapValue.serialize()
@@ -34,6 +34,10 @@ public func <- <T: Insertable>( left: inout T!, right: MapValue?) {
 
 // MARK: Generic operator
 public func <- <T>(left: inout T, right: MapValue?) {
+    left <- (right, { $0 })
+}
+
+public func <- <T: ExpressibleByNilLiteral> (left: inout T, right: MapValue?) {
     left <- (right, { $0 })
 }
 
