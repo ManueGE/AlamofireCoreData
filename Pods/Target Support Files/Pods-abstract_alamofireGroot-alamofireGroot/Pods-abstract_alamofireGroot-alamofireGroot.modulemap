@@ -1,5 +1,5 @@
-framework module Pods_abstract_alamofireGroot_alamofireGroot {
-  umbrella header "Pods-abstract_alamofireGroot-alamofireGroot-umbrella.h"
+framework module Pods_abstract_alamofireGroot_AlamofireGroot {
+  umbrella header "Pods-abstract_alamofireGroot-AlamofireGroot-umbrella.h"
 
   export *
   module * { export * }

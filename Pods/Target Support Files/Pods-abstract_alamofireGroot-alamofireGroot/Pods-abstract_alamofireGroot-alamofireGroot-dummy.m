@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_abstract_alamofireGroot_alamofireGroot : NSObject
+@interface PodsDummy_Pods_abstract_alamofireGroot_AlamofireGroot : NSObject
 @end
-@implementation PodsDummy_Pods_abstract_alamofireGroot_alamofireGroot
+@implementation PodsDummy_Pods_abstract_alamofireGroot_AlamofireGroot
 @end

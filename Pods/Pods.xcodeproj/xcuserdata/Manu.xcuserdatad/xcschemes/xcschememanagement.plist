@@ -8,35 +8,57 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>Groot.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>OHHTTPStubs.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
-		<key>Pods-abstract_alamofireGroot-alamofireGroot.xcscheme</key>
+		<key>Pods-abstract_alamofireGroot-AlamofireGroot.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
-		<key>Pods-abstract_alamofireGroot-alamofireGrootTests.xcscheme</key>
+		<key>Pods-abstract_alamofireGroot-AlamofireGrootTests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>PromiseKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>10EB2FEF3F1225CCA11CD4A7BEFF3D64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>652C81D4148C9E46DCA5A17965FA7B8C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
@@ -47,17 +69,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8FD17A759B21AB33DF10C7FC9F2404EB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9B0DFD1192E7A25B4C4D3115CF7F7B60</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CD52679D403C541DCE714A87AB55CE76</key>
+		<key>B4C134E9E5FF7195FB01B571D540A995</key>
 		<dict>
 			<key>primary</key>
 			<true/>

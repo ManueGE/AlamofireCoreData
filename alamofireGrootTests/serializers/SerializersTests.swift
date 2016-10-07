@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import alamofireGroot
+@testable import AlamofireGroot
 import CoreData
 import Alamofire
 

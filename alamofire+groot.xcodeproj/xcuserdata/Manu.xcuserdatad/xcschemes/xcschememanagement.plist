@@ -4,14 +4,29 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>alamofireGroot.xcscheme</key>
+		<key>AlamofireGroot.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>AlamofireGrootTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>323DF6B61DA7C8AC00953180</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>323DF6D31DA7CAB400953180</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>32F9816C1DA7A62E00A6257F</key>
 		<dict>
 			<key>primary</key>
