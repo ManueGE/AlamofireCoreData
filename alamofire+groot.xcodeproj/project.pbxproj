@@ -25,8 +25,8 @@
 		32774D851DA7F21500209F66 /* InsertableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32774D841DA7F21500209F66 /* InsertableTests.swift */; };
 		32774D871DA7F37E00209F66 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32774D861DA7F37E00209F66 /* LoginResponse.swift */; };
 		32774D881DA7FE0F00209F66 /* AlamofireGroot.h in Headers */ = {isa = PBXBuildFile; fileRef = 323DF6B91DA7C8AC00953180 /* AlamofireGroot.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9F42845CA018943BB458EC8E /* Pods_abstract_alamofireGroot_AlamofireGrootTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28C7DBC0CC4CAEC5D90B7AD /* Pods_abstract_alamofireGroot_AlamofireGrootTests.framework */; };
-		FAE1EEA705E104035FC472DC /* Pods_abstract_alamofireGroot_AlamofireGroot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 918AF1DE18AA00FD172B3199 /* Pods_abstract_alamofireGroot_AlamofireGroot.framework */; };
+		4C82EC69FFB14E836C199BBE /* Pods_abstract_target_AlamofireCoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75F45FA1B571A26C01635458 /* Pods_abstract_target_AlamofireCoreData.framework */; };
+		EF4F4F116B7C17DF4FB8E63B /* Pods_abstract_target_AlamofireCoreDataTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B819ED7D10F024B4321098B1 /* Pods_abstract_target_AlamofireCoreDataTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0779B4B9B161C8217374F311 /* Pods-abstract_target-AlamofireCoreDataTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_target-AlamofireCoreDataTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-abstract_target-AlamofireCoreDataTests/Pods-abstract_target-AlamofireCoreDataTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0F5FB475B3EADF41336AA9BB /* Pods-abstract_alamofireGroot-AlamofireGrootTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_alamofireGroot-AlamofireGrootTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-abstract_alamofireGroot-AlamofireGrootTests/Pods-abstract_alamofireGroot-AlamofireGrootTests.release.xcconfig"; sourceTree = "<group>"; };
 		247EBF9C274C094E7075AAC2 /* Pods_abstract_alamofireGroot_alamofireGroot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_abstract_alamofireGroot_alamofireGroot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		323DF6A31DA7BBA300953180 /* XCTest+OHHTTPStubs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+OHHTTPStubs.swift"; sourceTree = "<group>"; };
@@ -64,13 +65,18 @@
 		32774D861DA7F37E00209F66 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		32F981861DA7A7C400A6257F /* AlamofireCoreDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlamofireCoreDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F9818A1DA7A7C400A6257F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		608AFF066C313FAC1E564F6B /* Pods-abstract_target-AlamofireCoreData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_target-AlamofireCoreData.release.xcconfig"; path = "Pods/Target Support Files/Pods-abstract_target-AlamofireCoreData/Pods-abstract_target-AlamofireCoreData.release.xcconfig"; sourceTree = "<group>"; };
+		75F45FA1B571A26C01635458 /* Pods_abstract_target_AlamofireCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_abstract_target_AlamofireCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		779CB3D46964FE8A9422D328 /* Pods-abstract_alamofireGroot-AlamofireGroot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_alamofireGroot-AlamofireGroot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-abstract_alamofireGroot-AlamofireGroot/Pods-abstract_alamofireGroot-AlamofireGroot.debug.xcconfig"; sourceTree = "<group>"; };
 		7DC860C822AA8973C0A4265E /* Pods-abstract_alamofireGroot-alamofireGroot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_alamofireGroot-alamofireGroot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-abstract_alamofireGroot-alamofireGroot/Pods-abstract_alamofireGroot-alamofireGroot.debug.xcconfig"; sourceTree = "<group>"; };
 		86F72390B91652DFECB03F1E /* Pods-abstract_alamofireGroot-alamofireGrootTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_alamofireGroot-alamofireGrootTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-abstract_alamofireGroot-alamofireGrootTests/Pods-abstract_alamofireGroot-alamofireGrootTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9146E0B2F38C39D20E288A24 /* Pods-abstract_alamofireGroot-alamofireGrootTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_alamofireGroot-alamofireGrootTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-abstract_alamofireGroot-alamofireGrootTests/Pods-abstract_alamofireGroot-alamofireGrootTests.release.xcconfig"; sourceTree = "<group>"; };
 		918AF1DE18AA00FD172B3199 /* Pods_abstract_alamofireGroot_AlamofireGroot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_abstract_alamofireGroot_AlamofireGroot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BB741F272089CB7296CB34 /* Pods-abstract_alamofireGroot-AlamofireGroot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_alamofireGroot-AlamofireGroot.release.xcconfig"; path = "Pods/Target Support Files/Pods-abstract_alamofireGroot-AlamofireGroot/Pods-abstract_alamofireGroot-AlamofireGroot.release.xcconfig"; sourceTree = "<group>"; };
+		B819ED7D10F024B4321098B1 /* Pods_abstract_target_AlamofireCoreDataTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_abstract_target_AlamofireCoreDataTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C041BE564A6E09B64C2A3983 /* Pods-abstract_alamofireGroot-alamofireGroot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_alamofireGroot-alamofireGroot.release.xcconfig"; path = "Pods/Target Support Files/Pods-abstract_alamofireGroot-alamofireGroot/Pods-abstract_alamofireGroot-alamofireGroot.release.xcconfig"; sourceTree = "<group>"; };
+		D2D4C8888D827A84EC0EECF8 /* Pods-abstract_target-AlamofireCoreData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_target-AlamofireCoreData.debug.xcconfig"; path = "Pods/Target Support Files/Pods-abstract_target-AlamofireCoreData/Pods-abstract_target-AlamofireCoreData.debug.xcconfig"; sourceTree = "<group>"; };
+		DFE9965D6EF9BDBD7531123C /* Pods-abstract_target-AlamofireCoreDataTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_target-AlamofireCoreDataTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-abstract_target-AlamofireCoreDataTests/Pods-abstract_target-AlamofireCoreDataTests.release.xcconfig"; sourceTree = "<group>"; };
 		E28C7DBC0CC4CAEC5D90B7AD /* Pods_abstract_alamofireGroot_AlamofireGrootTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_abstract_alamofireGroot_AlamofireGrootTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E549E2D95A98D239AA7739B5 /* Pods_abstract_alamofireGroot_alamofireGrootTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_abstract_alamofireGroot_alamofireGrootTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E83FEE9969603A45F47E8050 /* Pods-abstract_alamofireGroot-AlamofireGrootTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-abstract_alamofireGroot-AlamofireGrootTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-abstract_alamofireGroot-AlamofireGrootTests/Pods-abstract_alamofireGroot-AlamofireGrootTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAE1EEA705E104035FC472DC /* Pods_abstract_alamofireGroot_AlamofireGroot.framework in Frameworks */,
+				4C82EC69FFB14E836C199BBE /* Pods_abstract_target_AlamofireCoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F42845CA018943BB458EC8E /* Pods_abstract_alamofireGroot_AlamofireGrootTests.framework in Frameworks */,
+				EF4F4F116B7C17DF4FB8E63B /* Pods_abstract_target_AlamofireCoreDataTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +211,8 @@
 				E549E2D95A98D239AA7739B5 /* Pods_abstract_alamofireGroot_alamofireGrootTests.framework */,
 				918AF1DE18AA00FD172B3199 /* Pods_abstract_alamofireGroot_AlamofireGroot.framework */,
 				E28C7DBC0CC4CAEC5D90B7AD /* Pods_abstract_alamofireGroot_AlamofireGrootTests.framework */,
+				75F45FA1B571A26C01635458 /* Pods_abstract_target_AlamofireCoreData.framework */,
+				B819ED7D10F024B4321098B1 /* Pods_abstract_target_AlamofireCoreDataTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -220,6 +228,10 @@
 				B5BB741F272089CB7296CB34 /* Pods-abstract_alamofireGroot-AlamofireGroot.release.xcconfig */,
 				E83FEE9969603A45F47E8050 /* Pods-abstract_alamofireGroot-AlamofireGrootTests.debug.xcconfig */,
 				0F5FB475B3EADF41336AA9BB /* Pods-abstract_alamofireGroot-AlamofireGrootTests.release.xcconfig */,
+				D2D4C8888D827A84EC0EECF8 /* Pods-abstract_target-AlamofireCoreData.debug.xcconfig */,
+				608AFF066C313FAC1E564F6B /* Pods-abstract_target-AlamofireCoreData.release.xcconfig */,
+				0779B4B9B161C8217374F311 /* Pods-abstract_target-AlamofireCoreDataTests.debug.xcconfig */,
+				DFE9965D6EF9BDBD7531123C /* Pods-abstract_target-AlamofireCoreDataTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -350,7 +362,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-abstract_alamofireGroot-AlamofireGrootTests/Pods-abstract_alamofireGroot-AlamofireGrootTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-abstract_target-AlamofireCoreDataTests/Pods-abstract_target-AlamofireCoreDataTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		89539D6A8E51BDBA0EA4A92B /* [CP] Copy Pods Resources */ = {
@@ -365,7 +377,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-abstract_alamofireGroot-AlamofireGroot/Pods-abstract_alamofireGroot-AlamofireGroot-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-abstract_target-AlamofireCoreData/Pods-abstract_target-AlamofireCoreData-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8CF0B86D624DA10662AD8F6A /* [CP] Check Pods Manifest.lock */ = {
@@ -395,7 +407,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-abstract_alamofireGroot-AlamofireGrootTests/Pods-abstract_alamofireGroot-AlamofireGrootTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-abstract_target-AlamofireCoreDataTests/Pods-abstract_target-AlamofireCoreDataTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CEEB5EC2F9C3E126D545B941 /* [CP] Check Pods Manifest.lock */ = {
@@ -460,7 +472,7 @@
 /* Begin XCBuildConfiguration section */
 		323DF6BD1DA7C8AC00953180 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 779CB3D46964FE8A9422D328 /* Pods-abstract_alamofireGroot-AlamofireGroot.debug.xcconfig */;
+			baseConfigurationReference = D2D4C8888D827A84EC0EECF8 /* Pods-abstract_target-AlamofireCoreData.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -484,7 +496,7 @@
 		};
 		323DF6BE1DA7C8AC00953180 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5BB741F272089CB7296CB34 /* Pods-abstract_alamofireGroot-AlamofireGroot.release.xcconfig */;
+			baseConfigurationReference = 608AFF066C313FAC1E564F6B /* Pods-abstract_target-AlamofireCoreData.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -601,7 +613,7 @@
 		};
 		32F9818D1DA7A7C400A6257F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E83FEE9969603A45F47E8050 /* Pods-abstract_alamofireGroot-AlamofireGrootTests.debug.xcconfig */;
+			baseConfigurationReference = 0779B4B9B161C8217374F311 /* Pods-abstract_target-AlamofireCoreDataTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = CF864KN2XE;
@@ -615,7 +627,7 @@
 		};
 		32F9818E1DA7A7C400A6257F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0F5FB475B3EADF41336AA9BB /* Pods-abstract_alamofireGroot-AlamofireGrootTests.release.xcconfig */;
+			baseConfigurationReference = DFE9965D6EF9BDBD7531123C /* Pods-abstract_target-AlamofireCoreDataTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = CF864KN2XE;
