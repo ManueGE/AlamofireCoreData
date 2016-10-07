@@ -14,7 +14,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-alamofire+groot.xcscheme</key>
+		<key>Pods-abstract_alamofireGroot-alamofireGroot.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,17 +27,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0E2CFF68BC3C944648B1ACDC51601ADF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>39232D3568C30B2407C83D75B6CA85F8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9B0DFD1192E7A25B4C4D3115CF7F7B60</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CD52679D403C541DCE714A87AB55CE76</key>
 		<dict>
 			<key>primary</key>
 			<true/>
