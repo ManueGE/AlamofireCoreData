@@ -141,6 +141,39 @@ class WrapperTests: InsertableTests {
         }
     }
 
+    func testSerializeWrapperWithDifferentInsertableTypes() {
+        
+        // given
+        let responseArrived = self.expectation(description: "response of async request has arrived")
+        var receivedObject: SampleWrapper?
+        let expectedJSON: [String: Any] = [
+            "user": ["id": 10, "name": "manueGE"],
+            "optional": ["id": 11, "name": "mila"],
+            "unwrap": ["id": 12, "name": "anaE"]
+        ]
+        
+        // when
+        stubSuccess(with: expectedJSON)
+        Alamofire.request(apiURL)
+            .responseInsert(context: persistentContainer.viewContext, type: SampleWrapper.self) { response in
+                switch response.result {
+                case let .success(sample):
+                    receivedObject = sample
+                case .failure:
+                    XCTFail("The operation shouldn't fail")
+                }
+                responseArrived.fulfill()
+        }
+        
+        // then
+        self.waitForExpectations(timeout: 2) { err in
+            XCTAssertNotNil(receivedObject, "Received data should not be nil")
+            XCTAssertEqual(receivedObject?.user.id, 10, "property should be nil")
+            XCTAssertEqual(receivedObject?.optionalUser?.id, 11, "property should be nil")
+            XCTAssertEqual(receivedObject?.unwrapUser.id, 12, "property should be nil")
+        }
+    }
+    
     // MARK: Nil and without key
     func testSerializeWrapperWithNilValue() {
         

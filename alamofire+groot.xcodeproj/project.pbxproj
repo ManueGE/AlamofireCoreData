@@ -14,6 +14,7 @@
 		323DF6C71DA7C8CD00953180 /* NSManagedObject+Insertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DF6C41DA7C8CD00953180 /* NSManagedObject+Insertable.swift */; };
 		323DF6CE1DA7C90100953180 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DF6CB1DA7C90100953180 /* User+CoreDataClass.swift */; };
 		323DF6CF1DA7C90100953180 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DF6CC1DA7C90100953180 /* User+CoreDataProperties.swift */; };
+		3271E1661DA80384007D85E1 /* SampleWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3271E1651DA80384007D85E1 /* SampleWrapper.swift */; };
 		32774D6B1DA7CE4700209F66 /* model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32774D691DA7CE4700209F66 /* model.xcdatamodeld */; };
 		32774D751DA7E01200209F66 /* Many.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32774D741DA7E01200209F66 /* Many.swift */; };
 		32774D7C1DA7E9F800209F66 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32774D7A1DA7E9F800209F66 /* Operator.swift */; };
@@ -51,6 +52,7 @@
 		323DF6C41DA7C8CD00953180 /* NSManagedObject+Insertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Insertable.swift"; sourceTree = "<group>"; };
 		323DF6CB1DA7C90100953180 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		323DF6CC1DA7C90100953180 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3271E1651DA80384007D85E1 /* SampleWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleWrapper.swift; sourceTree = "<group>"; };
 		32774D6A1DA7CE4700209F66 /* model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = model.xcdatamodel; sourceTree = "<group>"; };
 		32774D741DA7E01200209F66 /* Many.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Many.swift; sourceTree = "<group>"; };
 		32774D7A1DA7E9F800209F66 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				323DF6CB1DA7C90100953180 /* User+CoreDataClass.swift */,
 				323DF6CC1DA7C90100953180 /* User+CoreDataProperties.swift */,
 				32774D861DA7F37E00209F66 /* LoginResponse.swift */,
+				3271E1651DA80384007D85E1 /* SampleWrapper.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				323DF6B01DA7C35F00953180 /* NSPersistentContainer+Memory.swift in Sources */,
 				32774D811DA7F1BA00209F66 /* WrapperTests.swift in Sources */,
 				323DF6CF1DA7C90100953180 /* User+CoreDataProperties.swift in Sources */,
+				3271E1661DA80384007D85E1 /* SampleWrapper.swift in Sources */,
 				323DF6A41DA7BBA300953180 /* XCTest+OHHTTPStubs.swift in Sources */,
 				32774D7F1DA7F1A000209F66 /* NSManagedObjectTests.swift in Sources */,
 				32774D6B1DA7CE4700209F66 /* model.xcdatamodeld in Sources */,
