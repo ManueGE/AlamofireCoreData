@@ -11,25 +11,7 @@ import XCTest
 import CoreData
 import Alamofire
 
-class SerializersTests: XCTestCase {
-    
-    let apiURL = "https://api.com/path"
-    var persistentContainer: NSPersistentContainer!
-    
-    override func setUp() {
-        super.setUp()
-        persistentContainer = NSPersistentContainer(inMemoryWithName: "model")
-        persistentContainer.loadPersistentStores { (storeDescription, error) in
-            guard error == nil else {
-                fatalError("Can't create persistent store")
-            }
-        }
-    }
-    
-    override func tearDown() {
-        persistentContainer = nil
-        super.tearDown()
-    }
+class SerializersTests: InsertableTests {
     
     // MARK: Without serializer
     func testSerializeSingleManagedObject() {
