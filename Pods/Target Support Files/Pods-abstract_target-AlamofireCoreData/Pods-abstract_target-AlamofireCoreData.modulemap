@@ -1,0 +1,6 @@
+framework module Pods_abstract_target_AlamofireCoreData {
+  umbrella header "Pods-abstract_target-AlamofireCoreData-umbrella.h"
+
+  export *
+  module * { export * }
+}
