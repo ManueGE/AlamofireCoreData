@@ -12,18 +12,14 @@ Pod::Spec.new do |spec|
   spec.author    = "Manuel García-Estañ"
   spec.social_media_url   = "http://twitter.com/ManueGE"
 
-  spec.platform     = :ios, "8.0"
+  spec.platform     = :ios, "9.0"
   spec.source       = { :git => "https://github.com/ManueGE/AlamofireCoreData.git", :tag => "#{spec.version}" }
 
   spec.requires_arc = true
   spec.dependency "Alamofire", "~> 4.0"
-  spec.dependency "Alamofire", "~> 2.0"
+  spec.dependency "Groot", "~> 2.0"
 
-  spec.source_files = "source/**/*.{swift}"
-  sepc.framework  = "CoreData"
-
-  spec.subspec 'Core' do |core|
-    core
-  end
+  spec.source_files = "AlamofireCoreData/source/**/*.{swift}"
+  spec.framework  = "CoreData"
 
 end
