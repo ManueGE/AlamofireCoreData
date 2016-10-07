@@ -460,7 +460,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.alamofireGrootTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/alamofire+groot.app/alamofire+groot";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/alamofireGroot.app/alamofireGroot";
 			};
 			name = Debug;
 		};
@@ -474,7 +474,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.alamofireGrootTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/alamofire+groot.app/alamofire+groot";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/alamofireGroot.app/alamofireGroot";
 			};
 			name = Release;
 		};
