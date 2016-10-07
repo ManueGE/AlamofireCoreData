@@ -34,7 +34,7 @@ extension NSManagedObject: ManyInsertable {
     }
 }
 
-private extension NSManagedObjectContext {
+fileprivate extension NSManagedObjectContext {
     
     /// Return the `NSEntityDescription` for the given type in the receiver `NSManagedObjectContext`.
     /// If the entity can't be found, it will throw a fatalError

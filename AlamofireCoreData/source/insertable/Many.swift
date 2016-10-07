@@ -13,9 +13,9 @@ import Groot
 /// An `Array` replacement which can just contains `ManyInsertable` instances. 
 /// It implements `Insertable` so it can be used to insert-serialize array responses using Alamofire.
 /// It can be used in the same way that `Array` exception mutability. Anyway, if you need to access the raw `Array` version of this class, you can use the `array` property.
-struct Many<Element: ManyInsertable> {
+public struct Many<Element: ManyInsertable> {
     /// The array representation of the receiver
-    fileprivate(set) var array: [Element]
+    public fileprivate(set) var array: [Element]
     fileprivate init(_ array: [Element]) {
         self.array = array
     }
@@ -33,18 +33,17 @@ extension Many: Insertable {
 }
 
 // MARK: Array protocols
-
 extension Many: MutableCollection {
 
-    var startIndex: Int {
+    public var startIndex: Int {
         return array.startIndex
     }
     
-    var endIndex: Int {
+    public var endIndex: Int {
         return array.endIndex
     }
     
-    subscript(position: Int) -> Element {
+    public subscript(position: Int) -> Element {
         get {
             return array[position]
         }
@@ -64,7 +63,7 @@ extension Many: MutableCollection {
         }
     }
     
-    func index(after i: Int) -> Int {
+    public func index(after i: Int) -> Int {
         return array.index(after: i)
     }
 }
@@ -81,30 +80,30 @@ extension Many: RangeReplaceableCollection {
 }
 
 extension Many: ExpressibleByArrayLiteral {
-    init(arrayLiteral: Element...) {
+    public init(arrayLiteral: Element...) {
         self.init(arrayLiteral)
     }
 }
 
 extension Many: CustomReflectable {
-    var customMirror: Mirror {
+    public var customMirror: Mirror {
         return array.customMirror
     }
 }
 
 extension Many: RandomAccessCollection {
-    typealias SubSequence = Array<Element>.SubSequence
-    typealias Indices = Array<Element>.Indices
+    public typealias SubSequence = Array<Element>.SubSequence
+    public typealias Indices = Array<Element>.Indices
 }
 
 extension Many: CustomDebugStringConvertible {
-    var debugDescription: String {
+    public var debugDescription: String {
         return array.debugDescription
     }
 }
 
 extension Many: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         return array.description
     }
 }
