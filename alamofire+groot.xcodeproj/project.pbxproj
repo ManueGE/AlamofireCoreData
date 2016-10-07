@@ -16,6 +16,7 @@
 		323DF6CE1DA7C90100953180 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DF6CB1DA7C90100953180 /* User+CoreDataClass.swift */; };
 		323DF6CF1DA7C90100953180 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DF6CC1DA7C90100953180 /* User+CoreDataProperties.swift */; };
 		323DF6DF1DA7CC8A00953180 /* AlamofireGroot.h in Headers */ = {isa = PBXBuildFile; fileRef = 323DF6B91DA7C8AC00953180 /* AlamofireGroot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		32774D6B1DA7CE4700209F66 /* model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32774D691DA7CE4700209F66 /* model.xcdatamodeld */; };
 		32F981921DA7A85C00A6257F /* SerializersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F981911DA7A85C00A6257F /* SerializersTests.swift */; };
 		9F42845CA018943BB458EC8E /* Pods_abstract_alamofireGroot_AlamofireGrootTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E28C7DBC0CC4CAEC5D90B7AD /* Pods_abstract_alamofireGroot_AlamofireGrootTests.framework */; };
 		FAE1EEA705E104035FC472DC /* Pods_abstract_alamofireGroot_AlamofireGroot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 918AF1DE18AA00FD172B3199 /* Pods_abstract_alamofireGroot_AlamofireGroot.framework */; };
@@ -32,9 +33,9 @@
 		323DF6C11DA7C8CD00953180 /* Alamofire+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire+CoreData.swift"; sourceTree = "<group>"; };
 		323DF6C31DA7C8CD00953180 /* Insertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insertable.swift; sourceTree = "<group>"; };
 		323DF6C41DA7C8CD00953180 /* NSManagedObject+Insertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Insertable.swift"; sourceTree = "<group>"; };
-		323DF6CA1DA7C90100953180 /* model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = model.xcdatamodel; sourceTree = "<group>"; };
 		323DF6CB1DA7C90100953180 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		323DF6CC1DA7C90100953180 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		32774D6A1DA7CE4700209F66 /* model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = model.xcdatamodel; sourceTree = "<group>"; };
 		32F981861DA7A7C400A6257F /* AlamofireGrootTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlamofireGrootTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F9818A1DA7A7C400A6257F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32F981911DA7A85C00A6257F /* SerializersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializersTests.swift; sourceTree = "<group>"; };
@@ -118,7 +119,7 @@
 		323DF6C81DA7C90100953180 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				323DF6C91DA7C90100953180 /* model.xcdatamodeld */,
+				32774D691DA7CE4700209F66 /* model.xcdatamodeld */,
 				323DF6CB1DA7C90100953180 /* User+CoreDataClass.swift */,
 				323DF6CC1DA7C90100953180 /* User+CoreDataProperties.swift */,
 			);
@@ -400,6 +401,7 @@
 				323DF6CF1DA7C90100953180 /* User+CoreDataProperties.swift in Sources */,
 				323DF6A41DA7BBA300953180 /* XCTest+OHHTTPStubs.swift in Sources */,
 				323DF6CD1DA7C90100953180 /* model.xcdatamodeld in Sources */,
+				32774D6B1DA7CE4700209F66 /* model.xcdatamodeld in Sources */,
 				323DF6CE1DA7C90100953180 /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,9 +614,18 @@
 		323DF6C91DA7C90100953180 /* model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				323DF6CA1DA7C90100953180 /* model.xcdatamodel */,
 			);
-			currentVersion = 323DF6CA1DA7C90100953180 /* model.xcdatamodel */;
+			name = model.xcdatamodeld;
+			path = "/Users/Manu/Documents/Dev/Tools/alamofire+groot/AlamofireGrootTests/model/model.xcdatamodeld";
+			sourceTree = "<absolute>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		32774D691DA7CE4700209F66 /* model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				32774D6A1DA7CE4700209F66 /* model.xcdatamodel */,
+			);
+			currentVersion = 32774D6A1DA7CE4700209F66 /* model.xcdatamodel */;
 			path = model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

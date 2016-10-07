@@ -10,7 +10,10 @@ import CoreData
 
 extension NSPersistentContainer {
     convenience init(inMemoryWithName name: String) {
-        self.init(name: name)
+        let modelURL = Bundle(for: SerializersTests.self).url(forResource: name, withExtension: "momd")!
+        let model = NSManagedObjectModel(contentsOf: modelURL)!
+        
+        self.init(name: name, managedObjectModel: model)
         
         let description = NSPersistentStoreDescription()
         description.type = NSInMemoryStoreType

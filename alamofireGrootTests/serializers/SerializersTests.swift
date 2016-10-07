@@ -18,7 +18,6 @@ class SerializersTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
         persistentContainer = NSPersistentContainer(inMemoryWithName: "model")
         persistentContainer.loadPersistentStores { (storeDescription, error) in
             guard error == nil else {
@@ -59,6 +58,5 @@ class SerializersTests: XCTestCase {
             XCTAssertEqual(receivedObject?.name, "manueGE", "property does not match")
             XCTAssertEqual(receivedObject?.managedObjectContext, self.persistentContainer.viewContext, "property does not match")
         }
-
     }
 }
