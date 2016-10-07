@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/Manu/Documents/Dev/Tools/alamofire+groot/AlamofireCoreData.xcodeproj">
+      location = "group:AlamofireCoreData.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
