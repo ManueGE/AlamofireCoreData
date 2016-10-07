@@ -1,5 +1,5 @@
 //
-//  SerializersTests.swift
+//  WrapperTests.swift
 //  alamofire+groot
 //
 //  Created by Manuel García-Estañ on 7/10/16.
@@ -11,25 +11,8 @@ import XCTest
 import CoreData
 import Alamofire
 
-class SerializersTests: XCTestCase {
-    
-    let apiURL = "https://api.com/path"
-    var persistentContainer: NSPersistentContainer!
-    
-    override func setUp() {
-        super.setUp()
-        persistentContainer = NSPersistentContainer(inMemoryWithName: "model")
-        persistentContainer.loadPersistentStores { (storeDescription, error) in
-            guard error == nil else {
-                fatalError("Can't create persistent store")
-            }
-        }
-    }
-    
-    override func tearDown() {
-        persistentContainer = nil
-        super.tearDown()
-    }
+
+class WrapperTests: InsertableTests {
     
     // MARK: Without serializer
     func testSerializeSingleManagedObject() {
@@ -42,14 +25,14 @@ class SerializersTests: XCTestCase {
         // when
         stubSuccess(with: expectedJSON)
         Alamofire.request(apiURL)
-        .responseInsert(context: persistentContainer.viewContext, type: User.self) { response in
-            switch response.result {
-            case let .success(user):
-                receivedObject = user
-            case .failure:
-                XCTFail("The operation shouldn't fail")
-            }
-            responseArrived.fulfill()
+            .responseInsert(context: persistentContainer.viewContext, type: User.self) { response in
+                switch response.result {
+                case let .success(user):
+                    receivedObject = user
+                case .failure:
+                    XCTFail("The operation shouldn't fail")
+                }
+                responseArrived.fulfill()
         }
         
         // then
@@ -63,7 +46,7 @@ class SerializersTests: XCTestCase {
     
     // MARK: Serializer with transformer
     func testSerializingSingleManagedObjectWithTransformers() {
-        // given 
+        // given
         let responseArrived = self.expectation(description: "response of async request arrived")
         var receivedObject: User?
         let expectedJSON: [String: Any] = [
@@ -192,25 +175,5 @@ class SerializersTests: XCTestCase {
         self.waitForExpectations(timeout: 2) { err in
             XCTAssertNotNil(error, "error should not be nil")
         }
-    }
-}
-
-// MARK: Helpers
-struct ApiError: Error {
-    let message: String?
-}
-
-let jsonTransformer = DataRequest.jsonTransformerSerializer { result -> Result<Any> in
-    guard result.isSuccess else {
-        return result
-    }
-    
-    let json = result.value as! [String: Any]
-    let success = json["status"] as! NSNumber
-    switch success.boolValue {
-    case true:
-        return Result.success(json["data"]!)
-    default:
-        return Result.failure(ApiError(message: json["error"] as? String))
     }
 }
