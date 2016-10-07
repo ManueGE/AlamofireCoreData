@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		323DF69C1DA7AE8800953180 /* Alamofire+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DF69B1DA7AE8800953180 /* Alamofire+CoreData.swift */; };
+		323DF69F1DA7AEA800953180 /* Insertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DF69E1DA7AEA800953180 /* Insertable.swift */; };
 		32F981711DA7A62E00A6257F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F981701DA7A62E00A6257F /* AppDelegate.swift */; };
 		32F981731DA7A62E00A6257F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F981721DA7A62E00A6257F /* ViewController.swift */; };
 		32F981761DA7A62E00A6257F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F981741DA7A62E00A6257F /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		247EBF9C274C094E7075AAC2 /* Pods_abstract_alamofireGroot_alamofireGroot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_abstract_alamofireGroot_alamofireGroot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		323DF69B1DA7AE8800953180 /* Alamofire+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire+CoreData.swift"; sourceTree = "<group>"; };
+		323DF69E1DA7AEA800953180 /* Insertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insertable.swift; sourceTree = "<group>"; };
 		32F9816D1DA7A62E00A6257F /* alamofireGroot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alamofireGroot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F981701DA7A62E00A6257F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32F981721DA7A62E00A6257F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +70,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		323DF6961DA7ADC300953180 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				323DF69A1DA7AE8800953180 /* alamofire+coredata */,
+				323DF69D1DA7AE9200953180 /* insertable */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
+		323DF69A1DA7AE8800953180 /* alamofire+coredata */ = {
+			isa = PBXGroup;
+			children = (
+				323DF69B1DA7AE8800953180 /* Alamofire+CoreData.swift */,
+			);
+			path = "alamofire+coredata";
+			sourceTree = "<group>";
+		};
+		323DF69D1DA7AE9200953180 /* insertable */ = {
+			isa = PBXGroup;
+			children = (
+				323DF69E1DA7AEA800953180 /* Insertable.swift */,
+			);
+			path = insertable;
+			sourceTree = "<group>";
+		};
 		32F981641DA7A62E00A6257F = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +123,7 @@
 				32F981741DA7A62E00A6257F /* Main.storyboard */,
 				32F981771DA7A62E00A6257F /* Assets.xcassets */,
 				32F981791DA7A62E00A6257F /* LaunchScreen.storyboard */,
+				323DF6961DA7ADC300953180 /* source */,
 				32F9817C1DA7A62E00A6257F /* Info.plist */,
 			);
 			path = "alamofire+groot";
@@ -340,8 +370,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				323DF69F1DA7AEA800953180 /* Insertable.swift in Sources */,
 				32F981731DA7A62E00A6257F /* ViewController.swift in Sources */,
 				32F981711DA7A62E00A6257F /* AppDelegate.swift in Sources */,
+				323DF69C1DA7AE8800953180 /* Alamofire+CoreData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
