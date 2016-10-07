@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for AlamofireGroot.
-FOUNDATION_EXPORT double AlamofireGrootVersionNumber;
+//! Project version number for AlamofireCoreData.
+FOUNDATION_EXPORT double AlamofireCoreDataVersionNumber;
 
-//! Project version string for AlamofireGroot.
-FOUNDATION_EXPORT const unsigned char AlamofireGrootVersionString[];
+//! Project version string for AlamofireCoreData.
+FOUNDATION_EXPORT const unsigned char AlamofireCoreDataVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <AlamofireGroot/PublicHeader.h>
+// In this header, you should import all the public headers of your framework using statements like #import <AlamofireCoreData/PublicHeader.h>
 
 
