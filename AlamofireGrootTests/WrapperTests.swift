@@ -176,7 +176,7 @@ class WrapperTests: InsertableTests {
     
     // MARK: Nil and without key
     func testSerializeWrapperWithNilValue() {
-        
+
         // given
         let responseArrived = self.expectation(description: "response of async request has arrived")
         var receivedObject: LoginResponse?

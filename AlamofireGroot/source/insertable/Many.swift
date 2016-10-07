@@ -15,7 +15,7 @@ import Groot
 /// It can be used in the same way that `Array` exception mutability. Anyway, if you need to access the raw `Array` version of this class, you can use the `array` property.
 struct Many<Element: ManyInsertable> {
     /// The array representation of the receiver
-    private(set) var array: [Element]
+    fileprivate(set) var array: [Element]
     fileprivate init(_ array: [Element]) {
         self.array = array
     }
@@ -34,11 +34,7 @@ extension Many: Insertable {
 
 // MARK: Array protocols
 
-extension Many: Collection {
-
-    public subscript(bounds: Range<Int>) -> ArraySlice<Element> {
-        return array[bounds]
-    }
+extension Many: MutableCollection {
 
     var startIndex: Int {
         return array.startIndex
@@ -49,11 +45,44 @@ extension Many: Collection {
     }
     
     subscript(position: Int) -> Element {
-        return array[position]
+        get {
+            return array[position]
+        }
+        
+        set {
+            array[position] = newValue
+        }
+    }
+    
+    public subscript(bounds: Range<Int>) -> ArraySlice<Element> {
+        get {
+            return array[bounds]
+        }
+        
+        set {
+            array[bounds] = newValue
+        }
     }
     
     func index(after i: Int) -> Int {
         return array.index(after: i)
+    }
+}
+
+extension Many: RangeReplaceableCollection {
+
+    public mutating func replaceSubrange<C>(_ subrange: Range<Int>, with newElements: C) where C : Collection, C.Iterator.Element == Element {
+        self.array.replaceSubrange(subrange, with: newElements)
+    }
+
+    public init() {
+        self.init([])
+    }
+}
+
+extension Many: ExpressibleByArrayLiteral {
+    init(arrayLiteral: Element...) {
+        self.init(arrayLiteral)
     }
 }
 
