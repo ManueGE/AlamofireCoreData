@@ -17,7 +17,7 @@
                BlueprintIdentifier = "323DF6B61DA7C8AC00953180"
                BuildableName = "AlamofireCoreData.framework"
                BlueprintName = "AlamofireCoreData"
-               ReferencedContainer = "container:alamofire+groot.xcodeproj">
+               ReferencedContainer = "container:AlamofireCoreData.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,7 +36,7 @@
                BlueprintIdentifier = "32F981851DA7A7C400A6257F"
                BuildableName = "AlamofireCoreDataTests.xctest"
                BlueprintName = "AlamofireCoreDataTests"
-               ReferencedContainer = "container:alamofire+groot.xcodeproj">
+               ReferencedContainer = "container:AlamofireCoreData.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -46,7 +46,7 @@
             BlueprintIdentifier = "323DF6B61DA7C8AC00953180"
             BuildableName = "AlamofireCoreData.framework"
             BlueprintName = "AlamofireCoreData"
-            ReferencedContainer = "container:alamofire+groot.xcodeproj">
+            ReferencedContainer = "container:AlamofireCoreData.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -68,7 +68,7 @@
             BlueprintIdentifier = "323DF6B61DA7C8AC00953180"
             BuildableName = "AlamofireCoreData.framework"
             BlueprintName = "AlamofireCoreData"
-            ReferencedContainer = "container:alamofire+groot.xcodeproj">
+            ReferencedContainer = "container:AlamofireCoreData.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -86,7 +86,7 @@
             BlueprintIdentifier = "323DF6B61DA7C8AC00953180"
             BuildableName = "AlamofireCoreData.framework"
             BlueprintName = "AlamofireCoreData"
-            ReferencedContainer = "container:alamofire+groot.xcodeproj">
+            ReferencedContainer = "container:AlamofireCoreData.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

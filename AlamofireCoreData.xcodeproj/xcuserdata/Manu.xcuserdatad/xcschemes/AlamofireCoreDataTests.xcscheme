@@ -19,7 +19,7 @@
                BlueprintIdentifier = "32F981851DA7A7C400A6257F"
                BuildableName = "AlamofireCoreDataTests.xctest"
                BlueprintName = "AlamofireCoreDataTests"
-               ReferencedContainer = "container:alamofire+groot.xcodeproj">
+               ReferencedContainer = "container:AlamofireCoreData.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
