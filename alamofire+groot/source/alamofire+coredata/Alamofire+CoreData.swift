@@ -20,7 +20,6 @@ extension DataResponseSerializer {
     ///
     /// - returns: a new instance of the serializer
     public init<ParentValue>(parent: DataResponseSerializer<ParentValue>, transformer: @escaping (Result<ParentValue>) -> Result<Value>) {
-        
         self.init(serializeResponse: { request, response, data, error -> Result<Value> in
             let initialResponse = parent.serializeResponse(request, response, data, error)
             return transformer(initialResponse)

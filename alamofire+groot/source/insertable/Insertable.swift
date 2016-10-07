@@ -10,6 +10,13 @@ import Foundation
 import CoreData
 import Groot
 
+/// The errors that can be thrown if
+///
+/// - invalidJSON: The JSON is invalid and can't be used for the given operation
+public enum InsertError: Error {
+    case invalidJSON(Any)
+}
+
 /// Objects that can be inserted into a `NSManagedObjectContext`.
 public protocol Insertable {
     
@@ -18,7 +25,7 @@ public protocol Insertable {
     /// - parameter json:    The JSON used to insert the object
     /// - parameter context: The context where the object will be inserted
     ///
-    /// - throws: If the JSON can't be inserted.
+    /// - throws: An `InsertError` If the JSON can't be inserted.
     ///
     /// - returns: The inserted object
     static func insert(from json: Any, in context: NSManagedObjectContext) throws -> Self
