@@ -10,6 +10,11 @@
 		323DF69C1DA7AE8800953180 /* Alamofire+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DF69B1DA7AE8800953180 /* Alamofire+CoreData.swift */; };
 		323DF69F1DA7AEA800953180 /* Insertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DF69E1DA7AEA800953180 /* Insertable.swift */; };
 		323DF6A11DA7B67A00953180 /* NSManagedObject+Insertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DF6A01DA7B67A00953180 /* NSManagedObject+Insertable.swift */; };
+		323DF6A41DA7BBA300953180 /* XCTest+OHHTTPStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DF6A31DA7BBA300953180 /* XCTest+OHHTTPStubs.swift */; };
+		323DF6AA1DA7BD7600953180 /* model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 323DF6A81DA7BD7600953180 /* model.xcdatamodeld */; };
+		323DF6AD1DA7BDBD00953180 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DF6AB1DA7BDBD00953180 /* User+CoreDataClass.swift */; };
+		323DF6AE1DA7BDBD00953180 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DF6AC1DA7BDBD00953180 /* User+CoreDataProperties.swift */; };
+		323DF6B01DA7C35F00953180 /* NSPersistentContainer+Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323DF6AF1DA7C35F00953180 /* NSPersistentContainer+Memory.swift */; };
 		32F981711DA7A62E00A6257F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F981701DA7A62E00A6257F /* AppDelegate.swift */; };
 		32F981731DA7A62E00A6257F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F981721DA7A62E00A6257F /* ViewController.swift */; };
 		32F981761DA7A62E00A6257F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32F981741DA7A62E00A6257F /* Main.storyboard */; };
@@ -35,6 +40,12 @@
 		323DF69B1DA7AE8800953180 /* Alamofire+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alamofire+CoreData.swift"; sourceTree = "<group>"; };
 		323DF69E1DA7AEA800953180 /* Insertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Insertable.swift; sourceTree = "<group>"; };
 		323DF6A01DA7B67A00953180 /* NSManagedObject+Insertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+Insertable.swift"; sourceTree = "<group>"; };
+		323DF6A31DA7BBA300953180 /* XCTest+OHHTTPStubs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTest+OHHTTPStubs.swift"; sourceTree = "<group>"; };
+		323DF6A51DA7BD2600953180 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		323DF6A91DA7BD7600953180 /* model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = model.xcdatamodel; sourceTree = "<group>"; };
+		323DF6AB1DA7BDBD00953180 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		323DF6AC1DA7BDBD00953180 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		323DF6AF1DA7C35F00953180 /* NSPersistentContainer+Memory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSPersistentContainer+Memory.swift"; sourceTree = "<group>"; };
 		32F9816D1DA7A62E00A6257F /* alamofireGroot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = alamofireGroot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32F981701DA7A62E00A6257F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32F981721DA7A62E00A6257F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +109,25 @@
 			path = insertable;
 			sourceTree = "<group>";
 		};
+		323DF6A21DA7BB8100953180 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				323DF6A31DA7BBA300953180 /* XCTest+OHHTTPStubs.swift */,
+				323DF6AF1DA7C35F00953180 /* NSPersistentContainer+Memory.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		323DF6A71DA7BD3F00953180 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				323DF6AB1DA7BDBD00953180 /* User+CoreDataClass.swift */,
+				323DF6AC1DA7BDBD00953180 /* User+CoreDataProperties.swift */,
+				323DF6A81DA7BD7600953180 /* model.xcdatamodeld */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		32F981641DA7A62E00A6257F = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +156,8 @@
 				32F981741DA7A62E00A6257F /* Main.storyboard */,
 				32F981771DA7A62E00A6257F /* Assets.xcassets */,
 				32F981791DA7A62E00A6257F /* LaunchScreen.storyboard */,
+				323DF6A51DA7BD2600953180 /* Info.plist */,
+				323DF6A71DA7BD3F00953180 /* model */,
 				323DF6961DA7ADC300953180 /* source */,
 				32F9817C1DA7A62E00A6257F /* Info.plist */,
 			);
@@ -135,6 +167,7 @@
 		32F981871DA7A7C400A6257F /* alamofireGrootTests */ = {
 			isa = PBXGroup;
 			children = (
+				323DF6A21DA7BB8100953180 /* helpers */,
 				32F981901DA7A81100A6257F /* serializers */,
 				32F9818A1DA7A7C400A6257F /* Info.plist */,
 			);
@@ -375,9 +408,12 @@
 			files = (
 				323DF69F1DA7AEA800953180 /* Insertable.swift in Sources */,
 				32F981731DA7A62E00A6257F /* ViewController.swift in Sources */,
+				323DF6AE1DA7BDBD00953180 /* User+CoreDataProperties.swift in Sources */,
 				323DF6A11DA7B67A00953180 /* NSManagedObject+Insertable.swift in Sources */,
 				32F981711DA7A62E00A6257F /* AppDelegate.swift in Sources */,
 				323DF69C1DA7AE8800953180 /* Alamofire+CoreData.swift in Sources */,
+				323DF6AA1DA7BD7600953180 /* model.xcdatamodeld in Sources */,
+				323DF6AD1DA7BDBD00953180 /* User+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +421,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				323DF6B01DA7C35F00953180 /* NSPersistentContainer+Memory.swift in Sources */,
 				32F981921DA7A85C00A6257F /* SerializersTests.swift in Sources */,
+				323DF6A41DA7BBA300953180 /* XCTest+OHHTTPStubs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,6 +643,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		323DF6A81DA7BD7600953180 /* model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				323DF6A91DA7BD7600953180 /* model.xcdatamodel */,
+			);
+			currentVersion = 323DF6A91DA7BD7600953180 /* model.xcdatamodel */;
+			path = model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 32F981651DA7A62E00A6257F /* Project object */;
 }

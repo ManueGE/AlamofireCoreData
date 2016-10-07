@@ -9,6 +9,10 @@ abstract_target 'abstract_alamofireGroot' do
   pod 'Groot', '~> 2.0'
   
   target 'alamofireGroot'
-  target 'alamofireGrootTests'
+  
+  target 'alamofireGrootTests' do
+      pod 'OHHTTPStubs', '~> 5.2'
+      pod 'OHHTTPStubs/Swift', '~> 5.2'
+  end
 
 end
