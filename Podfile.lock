@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (4.0.1)
+  - Groot (2.0):
+    - Groot/Swift (= 2.0)
+  - Groot/Swift (2.0)
+  - PromiseKit (4.0.3):
+    - PromiseKit/Foundation (= 4.0.3)
+    - PromiseKit/QuartzCore (= 4.0.3)
+    - PromiseKit/UIKit (= 4.0.3)
+  - PromiseKit/CorePromise (4.0.3)
+  - PromiseKit/Foundation (4.0.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.0.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.0.3):
+    - PromiseKit/CorePromise
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - Groot (~> 2.0)
+  - PromiseKit (~> 4.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Groot: 7543f84980bfb1613750818029d9b927d4378211
+  PromiseKit: dfe8fcc6445674fb23378d89990838c1cbdbf05a
+
+PODFILE CHECKSUM: 363c73925e2e2c17fcf1814aaf967e299408c236
+
+COCOAPODS: 1.1.0.rc.2
