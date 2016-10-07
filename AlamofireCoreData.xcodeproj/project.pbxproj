@@ -202,7 +202,8 @@
 				323DF6A21DA7BB8100953180 /* helpers */,
 				32F9818A1DA7A7C400A6257F /* Info.plist */,
 			);
-			path = AlamofireGrootTests;
+			name = AlamofireGrootTests;
+			path = AlamofireCoreDataTests;
 			sourceTree = "<group>";
 		};
 		39E73190B48E960C1EC334C8 /* Frameworks */ = {
@@ -618,9 +619,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = CF864KN2XE;
-				INFOPLIST_FILE = alamofireGrootTests/Info.plist;
+				INFOPLIST_FILE = AlamofireCoreDataTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.alamofireGrootTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.alamofire_coredata_test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -632,9 +633,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				DEVELOPMENT_TEAM = CF864KN2XE;
-				INFOPLIST_FILE = alamofireGrootTests/Info.plist;
+				INFOPLIST_FILE = AlamofireCoreDataTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.alamofireGrootTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.manuege.alamofire_coredata_test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
