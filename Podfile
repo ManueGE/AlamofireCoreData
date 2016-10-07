@@ -9,5 +9,6 @@ abstract_target 'abstract_alamofireGroot' do
   pod 'Groot', '~> 2.0'
   
   target 'alamofireGroot'
+  target 'alamofireGrootTests'
 
 end

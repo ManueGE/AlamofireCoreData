@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CD52679D403C541DCE714A87AB55CE76"
-               BuildableName = "Pods_abstract_alamofireGroot_alamofireGroot.framework"
-               BlueprintName = "Pods-abstract_alamofireGroot-alamofireGroot"
+               BlueprintIdentifier = "79B25209E84816F318DD97C6A9057DAF"
+               BuildableName = "Pods_abstract_alamofireGroot_alamofireGrootTests.framework"
+               BlueprintName = "Pods-abstract_alamofireGroot-alamofireGrootTests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CD52679D403C541DCE714A87AB55CE76"
-            BuildableName = "Pods_abstract_alamofireGroot_alamofireGroot.framework"
-            BlueprintName = "Pods-abstract_alamofireGroot-alamofireGroot"
+            BlueprintIdentifier = "79B25209E84816F318DD97C6A9057DAF"
+            BuildableName = "Pods_abstract_alamofireGroot_alamofireGrootTests.framework"
+            BlueprintName = "Pods-abstract_alamofireGroot-alamofireGrootTests"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import alamofireGroot
+import Groot
 
 class SerializersTests: XCTestCase {
     
@@ -18,6 +19,4 @@ class SerializersTests: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
-    
-    
 }
