@@ -53,7 +53,7 @@ extension Many: Collection {
     }
     
     func index(after i: Int) -> Int {
-        return index(after: i)
+        return array.index(after: i)
     }
 }
 
