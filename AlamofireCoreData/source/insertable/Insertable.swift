@@ -55,4 +55,3 @@ extension ManyInsertable where Self: Insertable {
         return array.flatMap { try? insert(from: $0, in: context) }
     }
 }
-

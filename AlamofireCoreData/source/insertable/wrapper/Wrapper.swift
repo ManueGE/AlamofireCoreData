@@ -55,10 +55,10 @@ public enum MapKeyPath {
 public struct Map {
     
     /// The original dictionary whose values will be serialized
-    public var dictionary: [String: Any]
+    internal var dictionary: [String: Any]
     
     /// The context that will be used to insert the Insertable objects
-    public var context: NSManagedObjectContext
+    internal var context: NSManagedObjectContext
     
     /// Returns a MapValue with the value at the given keypath. If the receiver doesn't have any value at this keypath it returns nil.
     /// If the value at the keypath is `NSNull` it will return a MapValue with a nil value
@@ -103,10 +103,10 @@ public struct Map {
 public struct MapValue {
     
     /// The original value to serialize
-    public private(set) var originalValue: Any?
+    internal private(set) var originalValue: Any?
     
     /// The context that will be used to insert the `Insertable` objects
-    var context: NSManagedObjectContext
+    fileprivate var context: NSManagedObjectContext
     
     /**
      Serialize the receiver to a `Insertable` item
