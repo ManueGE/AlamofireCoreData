@@ -23,9 +23,9 @@ public protocol Wrapper: Insertable, ManyInsertable {
     mutating func map(_ map: Map)
 }
 
-extension Wrapper {
+public extension Wrapper {
     
-    static func insert(from json: Any, in context: NSManagedObjectContext) throws -> Self {
+    public static func insert(from json: Any, in context: NSManagedObjectContext) throws -> Self {
         
         guard let jsonObject = json as? JSONDictionary else {
             throw InsertError.invalidJSON(json)
