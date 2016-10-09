@@ -10,6 +10,14 @@ import Alamofire
 import CoreData
 import Groot
 
+/// A struct which encapsulate all the info of the response of a Request 
+public struct ResponseInfo {
+    public let request: URLRequest?
+    public let response: HTTPURLResponse?
+    public let data: Data?
+    public let error: Error?
+}
+
 extension DataResponseSerializer {
     
     /// Createa a new `DataResponseSerializer` which serialize the response in two steps:
@@ -19,10 +27,15 @@ extension DataResponseSerializer {
     /// - parameter transformer:        The block used for the second serialization
     ///
     /// - returns: a new instance of the serializer
-    public init<ParentValue>(parent: DataResponseSerializer<ParentValue>, transformer: @escaping (Result<ParentValue>) -> Result<Value>) {
+    public init<ParentValue>(
+        parent: DataResponseSerializer<ParentValue>,
+        transformer: @escaping (ResponseInfo, Result<ParentValue>) -> Result<Value>
+        ) {
         self.init(serializeResponse: { request, response, data, error -> Result<Value> in
             let initialResponse = parent.serializeResponse(request, response, data, error)
-            return transformer(initialResponse)
+            return transformer(
+                ResponseInfo(request: request, response: response, data: data, error: error),
+                initialResponse)
         })
     }
 }
@@ -39,7 +52,7 @@ extension DataRequest {
     /// - returns: the new serializer
     public static func jsonTransformerSerializer(
         options: JSONSerialization.ReadingOptions = .allowFragments,
-        transformer: @escaping ((Result<Any>) -> Result<Any>)
+        transformer: @escaping ((ResponseInfo, Result<Any>) -> Result<Any>)
         ) -> DataResponseSerializer<Any> {
         
         let parentSerializer = DataRequest.jsonResponseSerializer(options: options)
@@ -60,7 +73,7 @@ extension DataRequest {
         jsonSerializer: DataResponseSerializer<Any> = DataRequest.jsonResponseSerializer()
         ) -> DataResponseSerializer<T> {
         
-        return DataResponseSerializer(parent: jsonSerializer) { (result) -> Result<T> in
+        return DataResponseSerializer(parent: jsonSerializer) { (_, result) -> Result<T> in
             
             guard result.isSuccess else {
                 return .failure(result.error!)
@@ -108,4 +121,3 @@ extension DataRequest {
         )
     }
 }
-
