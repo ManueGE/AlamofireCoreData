@@ -296,7 +296,7 @@ class UserListResponse: Wrapper {
     required init() {}
     
     func map(map: Map) {
-        pagination <- map[.root] // Look that we don't use `.root` instead of a string
+        pagination <- map[.root] // Look that we use `.root` instead of a string
         users <- map["users"]
     }
 }
