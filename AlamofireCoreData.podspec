@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "AlamofireCoreData"
-  spec.version      = "0.0.1"
+  spec.version      = "1.0.0"
   spec.summary      = "A nice Alamofire serializer that convert JSON into CoreData using Groot."
   spec.description  = <<-DESC
   A nice Alamofire serializer that convert JSON into CoreData using Groot.
