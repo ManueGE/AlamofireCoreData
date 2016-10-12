@@ -2,9 +2,9 @@ Pod::Spec.new do |spec|
 
   spec.name         = "AlamofireCoreData"
   spec.version      = "1.0.0"
-  spec.summary      = "A nice Alamofire serializer that convert JSON into CoreData using Groot."
+  spec.summary      = "A nice Alamofire serializer that convert JSON into NSManagedObject instances."
   spec.description  = <<-DESC
-  A nice Alamofire serializer that convert JSON into CoreData using Groot.
+  A nice Alamofire serializer that convert JSON into NSManagedObject instances using Groot.
                    DESC
   spec.homepage     = "https://github.com/ManueGE/AlamofireCoreData/"
   spec.license      = "MIT"
