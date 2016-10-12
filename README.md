@@ -201,7 +201,7 @@ Sometimes, our models are not sent alone in the server responses. Instead, they 
 
 We need to not only inserting the `User` but also the `token`, `validity` and `friends`. To handle this, we have to create a new class or structure and adopt the **`Wrapper`** protocol. For example:
 
-````swfit
+````swift
 struct LoginResponse: Wrapper {
     var token: String!
     var validity: Date?
