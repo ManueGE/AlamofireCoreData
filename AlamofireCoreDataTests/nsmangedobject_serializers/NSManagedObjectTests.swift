@@ -182,7 +182,7 @@ struct ApiError: Error {
     let message: String?
 }
 
-let jsonTransformer = DataRequest.jsonTransformerSerializer { result -> Result<Any> in
+let jsonTransformer = DataRequest.jsonTransformerSerializer { (responseInfo, result) -> Result<Any> in
     guard result.isSuccess else {
         return result
     }
