@@ -94,24 +94,7 @@ The struct `Many` is just a wrapper around `Array` and it's intended to be used 
 
 ## Transforming your JSON
 
-In some cases, the data we get from the server is not in the right format. It could even happens that we have a XML where one of its fields is the JSON we have to parse (yes, I've found things like those 😅). In order to solve this issues, `responseInsert` has an additional optional parameter that you can use to transform the response into the JSON you need. It is called `jsonSerializer`:
-
-````swift
-Alamofire.request(apiURL)
-            .responseInsert(
-                jsonSerializer: jsonTransformer, 
-                context: persistentContainer.viewContext, 
-                type: User.self) { response in
-                
-                switch response.result {
-                case let .success(user):
-                    receivedObject = user
-                case .failure:
-                    XCTFail("The operation shouldn't fail")
-                }
-                responseArrived.fulfill()
-        }
-````
+In some cases, the data we get from the server is not in the right format. It could even happens that we have a XML where one of its fields is the JSON we have to parse (yes, I've found things like those 😅). In order to solve this issues, `responseInsert` has an additional optional parameter that you can use to transform the response into the JSON you need. It is called `jsonSerializer`.
 
 `jsonTransformer` is just a `Alamofire.DataResponseSerializer<Any>`. You can build your serializer as you want; the only condition is that it must return the JSON which you expect and which can be serialized by **Groot**.
 
