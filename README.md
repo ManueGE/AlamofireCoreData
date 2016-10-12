@@ -2,7 +2,7 @@
 
 A nice [**Alamofire**](https://github.com/Alamofire/Alamofire) serializer that convert JSON into **CoreData** objects.
 
-With AlamofireCoreData, you will have your JSON mapped and your CoreData objects inserted in your context with a single line:
+With AlamofireCoreData, you will have your JSON mapped and your `NSManagedObject` instances inserted in your context with just a few lines:
 
 ````swift
 // User is a `NSManagedObject` subclass
@@ -26,7 +26,7 @@ AlamofireCoreData is built around **Alamofire 4.0.x**
 
 ##### Using CocoaPods
 
-Add one the following to your `Podfile`:
+Add the following to your `Podfile`:
 
 ````ruby
 pod 'AlamofireCoreData'
@@ -52,11 +52,11 @@ The first thing you need to do to user AlamofireCoreData is making your models s
 
 Check out [**the Groot project**](https://github.com/gonzalezreal/Groot) to know how. 
 
-## Serializing single objects
+## Inserting a single object
 
-Let's supose we have a `NSManagedObject` subclass called `User`. We also have an API which will return a JSON that we want to convert to instances of `User` and insert it in a given `NSManagedObjectContext`. 
+Let's supose we have a `NSManagedObject` subclass called `User`. We also have an API which will return a JSON that we want to convert to a instance of `User` and insert it in a given `NSManagedObjectContext`. 
 
-Then, we just have to call the method `responseInsert` of the Alamofire request and pass the context and the type of the objects we want to serialize:
+Then, we just have to call the method `responseInsert` of the Alamofire request and pass the context and the type of the object as parameters:
 
 ````swift
 // User is a `NSManagedObject` subclass
@@ -71,11 +71,11 @@ Alamofire.request(url)
 }
 ````
 
-If the serialization fails, you will have an instance of `InsertError` in your `.failure(error)`
+If the serialization fails, you will have an instance of `InsertError.invalisJSON` in your `.failure(error)`
 
-## Serializing a list of objects
+## Inserting a list of objects
 
-Serializing a list of object is also easy. If your api returns a list of `User` instances, you can insert them all in your context by doing:
+Serializing a list of object is also easy. If your api returns a list of `User`, you can insert them all in your context by using `Many<User>` as the expected type:
 
 ````swift
 // User is a `NSManagedObject` subclass
@@ -90,11 +90,11 @@ Alamofire.request(url)
 }
 ````
 
-The struct `Many` is intended to be used in the same way you would use an array. In any case, you can convert it to an array by calling its propery `array`.
+The struct `Many` is just a wrapper around `Array` and it's intended to be used in the same way you would use an `Array`. In any case, you can access to its raw `Array` by calling its propery `array`.
 
 ## Transforming your JSON
 
-In some cases, the data we get from the server is not in the right format. It could happens that we have for instance a XML where one of its fields is the JSON we have to parse (yes, I've found things like these 😅). In order to solve this issues, `responseInsert` has an additional optional parameter that you can use to transform the response into the JSON you need. It is called `jsonSerializer`:
+In some cases, the data we get from the server is not in the right format. It could even happens that we have a XML where one of its fields is the JSON we have to parse (yes, I've found things like those 😅). In order to solve this issues, `responseInsert` has an additional optional parameter that you can use to transform the response into the JSON you need. It is called `jsonSerializer`:
 
 ````swift
 Alamofire.request(apiURL)
@@ -113,7 +113,7 @@ Alamofire.request(apiURL)
         }
 ````
 
-`jsonTransformer` is just a `Alamofire.DataResponseSerializer<Any>`. You can build your serializer in the way you need, the only condition is that it must return a JSON which is serializable by **Groot**.
+`jsonTransformer` is just a `Alamofire.DataResponseSerializer<Any>`. You can build your serializer as you want; the only condition is that it must return the JSON which you expect and which can be serialized by **Groot**.
 
 To build this serializer, you could use the Alamofire built-in method:
 
@@ -145,7 +145,7 @@ public static func jsonTransformerSerializer(
 
 where the response is converted into a JSON and the transformed with the `transformed` method. 
 
-As an example of this second method, let's think we have this response:
+Let's see an example of this second method. We have this response:
 
 ````json
 {
@@ -154,10 +154,15 @@ As an example of this second method, let's think we have this response:
 }
 ````
 
-we can create this serializer:
+We need a serializer which perform two tasks:
+
+- Check the `success` key to know if the request finished succesfully and send an error if not
+- Discard the `success` parameter and just send the contents of `data` to serialization.
+
+So, we can create this serializer:
 
 ````swift
-let jsonTransformer = DataRequest.jsonTransformerSerializer { result -> Result<Any> in
+let jsonTransformer = DataRequest.jsonTransformerSerializer { (responseInfo, result) -> Result<Any> in
     guard result.isSuccess else {
         return result
     }
@@ -168,19 +173,24 @@ let jsonTransformer = DataRequest.jsonTransformerSerializer { result -> Result<A
     case true:
         return Result.success(json["data"]!)
     default:
+        // here we should create or own error and send it
         return Result.failure(anError)
     }
 }
 ````
 
-This serializer perform two tasks:
+And call the requests this way:
 
-- Check the `success` key to check if the request finished succesfully and send an error if not
-- Discard the `success` parameter and just send the contents of `data` to serialization.
+````swift
+Alamofire.request(url).responseInsert(
+    jsonSerializer: jsonTransformer, 
+    context: persistentContainer.viewContext, 
+    type: User.self) 
+````
 
 
 ## Using Wrapper
-Sometimes, our models are not sent directly by the server responses. Instead they are wrapped into a bigger json. For example, let's suppose that we have a response for our login request where we get the user info, the access token, the validity date for the token and a list of friends:
+Sometimes, our models are not sent alone in the server responses. Instead, they could be wrapped into a bigger json with some additional useful info. For example, let's suppose that we have a response for our login request where we get the user info, the access token, the validity date for the token and a list of friends:
 
 ````swift
 {
@@ -199,7 +209,7 @@ Sometimes, our models are not sent directly by the server responses. Instead the
 }
 ```` 
 
-To handle this, we have to create a new class or structure and adopt the `Wrapper` protocol. For example:
+We need to not only inserting the `User` but also the `token`, `validity` and `friends`. To handle this, we have to create a new class or structure and adopt the **`Wrapper`** protocol. For example:
 
 ````swfit
 struct LoginResponse: Wrapper {
@@ -208,8 +218,10 @@ struct LoginResponse: Wrapper {
     var user: User!
     var friends: Many<User>!
     
+    // required by protocol
     init () {}
     
+    // provides info to convert the json
     mutating func map(_ map: Map) {
         token <- map["info.token"]
         validity <- (map["info.validity"], dateTransformer)
@@ -219,15 +231,13 @@ struct LoginResponse: Wrapper {
 }
 ````
 
-The `Wrapper` protocol includes a required init without parameters and the `map()` function. 
-
 The map function must use the same syntax as the example shows, using the `<-` operator. Some notes:
 
 - If the var is a `NSManagedObject`, a `Many<NSManagedObject`, another `Wrapper` or a `Many<Wrapper>`, the object is serialized and inserted.
-- Note that the collections must be a **`Many` and not an `Array`**. If you would use a `Array<User>` as `friends` type, the objects won't be serialized nor inserted. 
+- Note that the collections must be a **`Many` and not an `Array`**. If you would use a `Array<User>` as `friends` type, the objects wouldn't be serialized or inserted. 
 - You can add transformers to change the type of the JSON value. In the exaple, the `validity` field of the JSON is a `String` but we need a `Date`. We pass `dateTrasformer` which is just a function that takes an `String` and turn it into a `Date`.
 
-Now, we can call the same method as before:
+Now, we can call the same method as before but with the `LoginResponse` as the expected type:
 
 ````swift
 Alamofire.request(loginURL)
