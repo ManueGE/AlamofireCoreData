@@ -10,7 +10,7 @@ import Alamofire
 import CoreData
 import Groot
 
-/// A struct which encapsulate all the info of the response of a Request 
+/// A wrapper which encapsulate all the info of the response of a Request 
 public struct ResponseInfo {
     public let request: URLRequest?
     public let response: HTTPURLResponse?
