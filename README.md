@@ -290,7 +290,7 @@ Look that the pagination is not under any key, but it is in the root of the JSON
 ````swift
 class UserListResponse: Wrapper {
 	var pagination: Pagination!
-	var users: [User]!
+	var users: Many<User>!
 	
 	// MARK: Wrapper protocol methods
     required init() {}
