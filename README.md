@@ -94,7 +94,14 @@ The struct `Many` is just a wrapper around `Array` and it's intended to be used 
 
 ## Transforming your JSON
 
-In some cases, the data we get from the server is not in the right format. It could even happens that we have a XML where one of its fields is the JSON we have to parse (yes, I've found things like those 😅). In order to solve this issues, `responseInsert` has an additional optional parameter that you can use to transform the response into the JSON you need. It is called `jsonSerializer`.
+In some cases, the data we get from the server is not in the right format. It could even happens that we have a XML where one of its fields is the JSON we have to parse (yes, I've found things like those 😅). In order to solve this issues, `responseInsert` has an additional optional parameter that you can use to transform the response into the JSON you need. It is called `jsonSerializer`:
+
+````swift
+Alamofire.request(url).responseInsert(
+    jsonSerializer: jsonTransformer, 
+    context: persistentContainer.viewContext, 
+    type: User.self) 
+````
 
 `jsonTransformer` is just a `Alamofire.DataResponseSerializer<Any>`. You can build your serializer as you want; the only condition is that it must return the JSON which you expect and which can be serialized by **Groot**.
 
@@ -115,7 +122,7 @@ public init<ParentValue>(
         )
 ````
 
-where the response is processed by the `parent` parameter and the converted by the `transformer` closure.
+where the response is processed by the `parent` parameter and then the `Result` is converted by the `transformer` closure.
 
 - A `DataRequest` class method
 
@@ -126,7 +133,7 @@ public static func jsonTransformerSerializer(
         ) -> DataResponseSerializer<Any>
 ````
 
-where the response is converted into a JSON and the transformed with the `transformed` method. 
+where the response is converted into a JSON and then the `Result` is converted by the `transformer` closure.
 
 Let's see an example of this second method. We have this response:
 
