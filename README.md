@@ -99,7 +99,7 @@ In some cases, the data we get from the server is not in the right format. It co
 ````swift
 Alamofire.request(url).responseInsert(
     jsonSerializer: jsonTransformer, 
-    context: persistentContainer.viewContext, 
+    context: context, 
     type: User.self) 
 ````
 
@@ -174,7 +174,7 @@ And call the requests this way:
 ````swift
 Alamofire.request(url).responseInsert(
     jsonSerializer: jsonTransformer, 
-    context: persistentContainer.viewContext, 
+    context: context, 
     type: User.self) 
 ````
 
