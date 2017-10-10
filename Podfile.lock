@@ -18,31 +18,18 @@ PODS:
   - OHHTTPStubs/OHPathHelpers (5.2.1)
   - OHHTTPStubs/Swift (5.2.1):
     - OHHTTPStubs/Core
-  - PromiseKit (4.0.3):
-    - PromiseKit/Foundation (= 4.0.3)
-    - PromiseKit/QuartzCore (= 4.0.3)
-    - PromiseKit/UIKit (= 4.0.3)
-  - PromiseKit/CorePromise (4.0.3)
-  - PromiseKit/Foundation (4.0.3):
-    - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (4.0.3):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (4.0.3):
-    - PromiseKit/CorePromise
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - Groot (~> 2.0)
   - OHHTTPStubs (~> 5.2)
   - OHHTTPStubs/Swift (~> 5.2)
-  - PromiseKit (~> 4.0)
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   Groot: 7543f84980bfb1613750818029d9b927d4378211
   OHHTTPStubs: 3a42f25c00563b71355ac73112ba2324e9e6cef4
-  PromiseKit: dfe8fcc6445674fb23378d89990838c1cbdbf05a
 
-PODFILE CHECKSUM: ae994153372176071bc40656d0dbb9314f399c15
+PODFILE CHECKSUM: d76c65817a87772f1369f91971ca7a32ec52eaab
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.1.0.rc.3

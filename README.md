@@ -97,20 +97,10 @@ The struct `Many` is just a wrapper around `Array` and it's intended to be used 
 In some cases, the data we get from the server is not in the right format. It could even happens that we have a XML where one of its fields is the JSON we have to parse (yes, I've found things like those 😅). In order to solve this issues, `responseInsert` has an additional optional parameter that you can use to transform the response into the JSON you need. It is called `jsonSerializer`:
 
 ````swift
-Alamofire.request(apiURL)
-            .responseInsert(
-                jsonSerializer: jsonTransformer, 
-                context: persistentContainer.viewContext, 
-                type: User.self) { response in
-                
-                switch response.result {
-                case let .success(user):
-                    receivedObject = user
-                case .failure:
-                    XCTFail("The operation shouldn't fail")
-                }
-                responseArrived.fulfill()
-        }
+Alamofire.request(url).responseInsert(
+    jsonSerializer: jsonTransformer, 
+    context: context, 
+    type: User.self) 
 ````
 
 `jsonTransformer` is just a `Alamofire.DataResponseSerializer<Any>`. You can build your serializer as you want; the only condition is that it must return the JSON which you expect and which can be serialized by **Groot**.
@@ -132,7 +122,7 @@ public init<ParentValue>(
         )
 ````
 
-where the response is processed by the `parent` parameter and the converted by the `transformer` closure.
+where the response is processed by the `parent` parameter and then the `Result` is converted by the `transformer` closure.
 
 - A `DataRequest` class method
 
@@ -143,7 +133,7 @@ public static func jsonTransformerSerializer(
         ) -> DataResponseSerializer<Any>
 ````
 
-where the response is converted into a JSON and the transformed with the `transformed` method. 
+where the response is converted into a JSON and then the `Result` is converted by the `transformer` closure.
 
 Let's see an example of this second method. We have this response:
 
@@ -184,7 +174,7 @@ And call the requests this way:
 ````swift
 Alamofire.request(url).responseInsert(
     jsonSerializer: jsonTransformer, 
-    context: persistentContainer.viewContext, 
+    context: context, 
     type: User.self) 
 ````
 
@@ -211,7 +201,7 @@ Sometimes, our models are not sent alone in the server responses. Instead, they 
 
 We need to not only inserting the `User` but also the `token`, `validity` and `friends`. To handle this, we have to create a new class or structure and adopt the **`Wrapper`** protocol. For example:
 
-````swfit
+````swift
 struct LoginResponse: Wrapper {
     var token: String!
     var validity: Date?
@@ -300,13 +290,13 @@ Look that the pagination is not under any key, but it is in the root of the JSON
 ````swift
 class UserListResponse: Wrapper {
 	var pagination: Pagination!
-	var users: [User]!
+	var users: Many<User>!
 	
 	// MARK: Wrapper protocol methods
     required init() {}
     
     func map(map: Map) {
-        pagination <- map[.root] // Look that we don't use `.root` instead of a string
+        pagination <- map[.root] // Look that we use `.root` instead of a string
         users <- map["users"]
     }
 }
