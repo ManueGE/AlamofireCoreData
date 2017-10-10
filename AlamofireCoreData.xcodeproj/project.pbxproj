@@ -109,14 +109,13 @@
 			path = helpers;
 			sourceTree = "<group>";
 		};
-		323DF6B81DA7C8AC00953180 /* AlamofireGroot */ = {
+		323DF6B81DA7C8AC00953180 /* AlamofireCoreData */ = {
 			isa = PBXGroup;
 			children = (
 				323DF6BF1DA7C8CD00953180 /* source */,
 				323DF6B91DA7C8AC00953180 /* AlamofireCoreData.h */,
 				323DF6BA1DA7C8AC00953180 /* Info.plist */,
 			);
-			name = AlamofireGroot;
 			path = AlamofireCoreData;
 			sourceTree = "<group>";
 		};
@@ -172,8 +171,8 @@
 		32F981641DA7A62E00A6257F = {
 			isa = PBXGroup;
 			children = (
-				323DF6B81DA7C8AC00953180 /* AlamofireGroot */,
-				32F981871DA7A7C400A6257F /* AlamofireGrootTests */,
+				323DF6B81DA7C8AC00953180 /* AlamofireCoreData */,
+				32F981871DA7A7C400A6257F /* AlamofireCoreDataTests */,
 				32F9816E1DA7A62E00A6257F /* Products */,
 				6614A14DE93C25588AE05449 /* Pods */,
 				1312DBCBE25BD1B6FC4A1A2C /* Frameworks */,
@@ -189,7 +188,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		32F981871DA7A7C400A6257F /* AlamofireGrootTests */ = {
+		32F981871DA7A7C400A6257F /* AlamofireCoreDataTests */ = {
 			isa = PBXGroup;
 			children = (
 				32774D841DA7F21500209F66 /* InsertableTests.swift */,
@@ -199,7 +198,6 @@
 				323DF6A21DA7BB8100953180 /* helpers */,
 				32F9818A1DA7A7C400A6257F /* Info.plist */,
 			);
-			name = AlamofireGrootTests;
 			path = AlamofireCoreDataTests;
 			sourceTree = "<group>";
 		};
