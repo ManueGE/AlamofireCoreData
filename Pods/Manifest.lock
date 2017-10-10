@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.0.1)
+  - Alamofire (4.5.1)
   - Groot (2.0):
     - Groot/Swift (= 2.0)
   - Groot/Swift (2.0)
@@ -20,16 +20,16 @@ PODS:
     - OHHTTPStubs/Core
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
+  - Alamofire (~> 4.5)
   - Groot (~> 2.0)
   - OHHTTPStubs (~> 5.2)
   - OHHTTPStubs/Swift (~> 5.2)
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   Groot: 7543f84980bfb1613750818029d9b927d4378211
   OHHTTPStubs: 3a42f25c00563b71355ac73112ba2324e9e6cef4
 
-PODFILE CHECKSUM: d76c65817a87772f1369f91971ca7a32ec52eaab
+PODFILE CHECKSUM: e9526280220921e2a456bbdc8749aaa8c62b690b
 
-COCOAPODS: 1.1.0.rc.3
+COCOAPODS: 1.2.1
