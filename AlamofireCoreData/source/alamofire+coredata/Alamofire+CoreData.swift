@@ -80,7 +80,7 @@ extension DataRequest {
             }
             
             do {
-                let value: T = try T.insert(from: result.value, in: context)
+                let value: T = try T.insert(from: result.value ?? [:], in: context)
                 return .success(value)
             }
             
