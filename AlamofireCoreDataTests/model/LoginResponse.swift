@@ -19,7 +19,8 @@ struct LoginResponse: Wrapper {
     var user: User!
     var friends: Many<User>!
     
-    init () {}
+    init () {
+    }
     
     mutating func map(_ map: Map) {
         token <- map["token"]
@@ -29,7 +30,7 @@ struct LoginResponse: Wrapper {
         page <- map["page"]
         
         user <- map["user"]
-        
+
         friends <- map["friends"]
     }
 }

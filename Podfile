@@ -4,8 +4,8 @@
 abstract_target 'abstract_target' do
   use_frameworks!
 
-  pod 'Alamofire', '~> 4.5'
-  pod 'Groot', '~> 2.0'
+  pod 'Alamofire', '~> 4.7.1'
+  pod 'Groot', '~> 3.0.1'
   
   target 'AlamofireCoreData'
   

@@ -52,6 +52,6 @@ extension ManyInsertable where Self: Insertable {
             throw InsertError.invalidJSON(json)
         }
         
-        return array.flatMap { try? insert(from: $0, in: context) }
+        return array.compactMap { try? insert(from: $0, in: context) }
     }
 }
