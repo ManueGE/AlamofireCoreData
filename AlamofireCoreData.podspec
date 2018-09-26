@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "AlamofireCoreData"
-  spec.version      = "1.1.0"
+  spec.version      = "2.0.0"
   spec.summary      = "A nice Alamofire serializer that convert JSON into NSManagedObject instances."
   spec.description  = <<-DESC
   A nice Alamofire serializer that convert JSON into NSManagedObject instances using Groot.
@@ -16,8 +16,8 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/ManueGE/AlamofireCoreData.git", :tag => "#{spec.version}" }
 
   spec.requires_arc = true
-  spec.dependency "Alamofire", "~> 4.5"
-  spec.dependency "Groot", "~> 2.0"
+  spec.dependency "Alamofire", "~> 4.7"
+  spec.dependency "Groot", "~> 3.0"
 
   spec.source_files = "AlamofireCoreData/source/**/*.{swift}"
   spec.framework  = "CoreData"

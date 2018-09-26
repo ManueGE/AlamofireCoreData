@@ -29,7 +29,7 @@ AlamofireCoreData is built around **Alamofire 4.0.x**
 Add the following to your `Podfile`:
 
 ````ruby
-pod 'AlamofireCoreData'
+pod 'AlamofireCoreData', '~> 2.0.0'
 ````
 
 Then run `$ pod install`.
