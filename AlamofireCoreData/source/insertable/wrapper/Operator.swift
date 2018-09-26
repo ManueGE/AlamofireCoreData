@@ -25,13 +25,6 @@ public func <- <T: Insertable>( left: inout T?, right: MapValue?) {
     }
 }
 
-public func <- <T: Insertable>( left: inout T!, right: MapValue?) {
-    if let mapValue = right {
-        let value: T? = mapValue.serialize()
-        left = value
-    }
-}
-
 // MARK: Generic operator
 public func <- <T>(left: inout T, right: MapValue?) {
     left <- (right, { $0 })
