@@ -17,9 +17,11 @@ struct LoginResponse: Wrapper {
     var validity: Date?
     var page: Int = 0
     var user: User!
+    var optionalUser: User? = nil
     var friends: Many<User>!
     
-    init () {}
+    init () {
+    }
     
     mutating func map(_ map: Map) {
         token <- map["token"]
@@ -29,7 +31,12 @@ struct LoginResponse: Wrapper {
         page <- map["page"]
         
         user <- map["user"]
-        
+        optionalUser <- map["user"]
+        if let optionalUser = optionalUser {
+            var anotherUser: User = optionalUser
+            anotherUser <- map["user"]
+        }
+
         friends <- map["friends"]
     }
 }
